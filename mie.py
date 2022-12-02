@@ -172,8 +172,8 @@ def mie(radius, wavelength, ior_sph, ior_med, mu, nmax = -1):
         S2 += kn * (a_n * pi_n + b_n * tau_n)
 
         # Calculate i-th term of Cs and Ct
-        Cs += kn * (a_sq_norm + b_sq_norm)
-        Ct += np.real(kn * (a_n + b_n))
+        Cs += (2 * n + 1) * (a_sq_norm + b_sq_norm)
+        Ct += np.real((2 * n + 1) * (a_n + b_n))
 
         # Calculate i-th term of factor in denominator
         Ns += (2 * n + 1) * (a_sq_norm + b_sq_norm)
